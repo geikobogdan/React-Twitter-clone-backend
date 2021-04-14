@@ -27,6 +27,7 @@ app.get("/tweets", createTweetValidations, TweetsCtrl.index);
 app.get("/tweets/:id", createTweetValidations, TweetsCtrl.show);
 app.delete("/tweets/:id", passport.authenticate("jwt"),TweetsCtrl.delete);
 app.post("/tweets", passport.authenticate("jwt"),createTweetValidations, TweetsCtrl.create);
+app.patch("/tweets/:id", passport.authenticate("jwt"),createTweetValidations,TweetsCtrl.update);
 
 app.get("/auth/verify", registerValidations, UserCtrl.verify);
 app.post("/auth/register", registerValidations, UserCtrl.create);

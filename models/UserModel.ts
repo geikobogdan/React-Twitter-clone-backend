@@ -45,6 +45,9 @@ const UserSchema = new Schema<any>({
   location: String,
   about: String,
   website: String,
+},
+{
+  timestamps: true,
 });
 UserSchema.set("toJSON", {
   transform: function (_: any, obj: any) {
@@ -54,4 +57,4 @@ UserSchema.set("toJSON", {
   },
 });
 
-export const UserModel = model<UserModelDocumentInterface>("users", UserSchema);
+export const UserModel = model<UserModelDocumentInterface>("User", UserSchema);
